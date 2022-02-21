@@ -1,11 +1,19 @@
-<h1>{{title}}</h1>
-{{#if conocido}}
-<p>Hola {{nombre}} <a href="/salir">Salir</a></p>
-{{/if}}
-
-{{#unless conocido}}
-<p>Ingrese su nombre</p>
-<form action="/ingresar" method="post">
-<input type="text" name="nombre"><button>ingresar</button>
+<h1></h1>
+<div class="container">
+  <div class="row" style="margin:250px 5">
+<form action="/admin/login" method="post">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Usuario" name="usuario">
+  </div>
+  <h1></h1>
+  <div class="form-group">
+    <input type="password" class="form-control" placeholder="Password" name="password">
+  </div>
+  <h1></h1>
+    <button type="submit" class="btn btn-primary">Ingresar</button>
 </form>
-{{/unless}}
+    {{#if error}}
+    <p>Usuario o Contraseña incorrecto</p>
+    {{/if}}
+  </div>
+</div>
